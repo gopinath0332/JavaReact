@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 class  App extends  Component{
     render(){
         return(
-            <div> App component - 123</div>
+            <div> App component - 123
+            <image src="./resources/images/download.png"/>
+            </div>
         );
     }
 }
