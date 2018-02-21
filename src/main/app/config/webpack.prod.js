@@ -4,5 +4,5 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(common,{
-   plugins:[new ExtractTextPlugin("app.css"),new UglifyJSPlugin()]
+   plugins:[new ExtractTextPlugin("app.css", { allChunks: true }),new UglifyJSPlugin()]
 });

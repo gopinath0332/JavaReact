@@ -4,9 +4,10 @@ import css from "./index.less";
 
 class App extends Component {
     render() {
+        console.log("css-123",css);
         return (
-            <div className={css.test}>
-                <div> App component - 1
+            <div id="app" className={css.test}>
+                <div> App component - 12
                     <img src="./resources/images/download.png"/>
                 </div>
             </div>

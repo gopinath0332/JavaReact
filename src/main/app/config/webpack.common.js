@@ -14,7 +14,7 @@ module.exports = {
       path: path.resolve(__dirname, "../../webapp/resources/dist")
    },
    plugins: [
-      new CleanWebpackPlugin(["../../webapp/resources/dist"]),
+      new CleanWebpackPlugin(['dist']),
    ],
    module: {
       rules: [{
@@ -39,9 +39,9 @@ module.exports = {
       },
           {
               test: /\.less$/,
-              use: ExtractTextPlugin.extract({
-                  fallback: "style-loader",
-                  use: "css-loader"
+              use:ExtractTextPlugin.extract({
+                  fallback: 'style-loader',
+                  use: 'css-loader!less-loader',
               })
           }]
    }
