@@ -14,7 +14,7 @@ module.exports = {
       path: path.resolve(__dirname, "../../webapp/resources/dist")
    },
    plugins: [
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(["../../webapp/resources/dist"]),
    ],
    module: {
       rules: [{
@@ -32,11 +32,17 @@ module.exports = {
           }
       },  {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+          use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader"
+          })
       },
           {
               test: /\.less$/,
-              loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+              use: ExtractTextPlugin.extract({
+                  fallback: "style-loader",
+                  use: "css-loader"
+              })
           }]
    }
-}
+};
